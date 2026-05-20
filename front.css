@@ -865,3 +865,9 @@ section#action {
         height: 24px;
     }
 }
+.gh-product-img img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+}
