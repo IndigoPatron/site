@@ -1,0 +1,23 @@
+body .home {
+    position: relative;
+    padding-top: 250px;
+    padding-bottom: 200px;
+    width: 100%;
+    z-index: 1;
+}
+
+body .home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    background: url('../sun9-86.userapi.com/B3TmE0r6ubpOCL1CdDIvTo9loaX6LXVFHCOFvg/czQR0F41x5U.jpg') no-repeat scroll center center;
+    
+    background-size: cover;
+    filter: blur(8px);
+    z-index: -1;
+}
+
