@@ -197,7 +197,7 @@ a:hover {
 .gh-hero-bg {
     position: absolute;
     inset: 0;
-    background: url('../sun9-86.userapi.com/B3TmE0r6ubpOCL1CdDIvTo9loaX6LXVFHCOFvg/czQR0F41x5U.jpg') center/cover no-repeat;
+    background: url('https://sun9-86.userapi.com/B3TmE0r6ubpOCL1CdDIvTo9loaX6LXVFHCOFvg/czQR0F41x5U.jpg') center/cover no-repeat;
     filter: blur(6px) brightness(.5);
     transform: scale(1.1);
 }
