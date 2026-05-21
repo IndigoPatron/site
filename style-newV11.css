@@ -1,634 +1,755 @@
-<!doctype html>
-<html lang="ru">
-<head>
-	<meta charset="utf-8">
-	<title>GOOD HAPPENS | Персональный шоппинг | Байер</title>
-	<link rel="canonical" href="https://goodhappens.ru/" />
-	<meta name="description" content="GOOD HAPPENS - персональный шоппинг от команды профессионалов. Мы занимаемся поиском и выкупом позиций люксовых и премиальных брендов с 2013 года.">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta property="og:title" content="GOOD HAPPENS | Персональный шоппинг">
-	<meta property="og:description" content="Люксовые и премиальные бренды с доставкой из бутиков по всему миру. Персональный шоппинг с 2013 года.">
-	<meta property="og:type" content="website">
-	<meta property="og:url" content="https://goodhappens.ru/">
-	<meta property="og:image" content="https://goodhappens.ru/foto/photo_2026-05-16_17-15-08.jpg">
-	<meta name="twitter:card" content="summary_large_image">
-	<link rel="icon" type="image/png" href="favicon.ico">
+html,body{margin:0;font-size:14px;color:#2e2e2e;width:100%;padding:0;margin-left:0;margin-right:0;font-weight:400;width:100%;font-family:'Raleway',sans-serif}
+body {     display: flex;    flex-direction: column;    min-height: 100vh;}
+main{ flex-grow: 1; }
+a{color:#363535}
+.bg-grey{background:#f8f8f8}
+.page-content,section{overflow:hidden}
+li.footer{width:240px;margin-left:20px;display:inline-block;vertical-align:top}
+a:hover{color:#ccc}
+a,a:hover,a:active,a:focus{text-decoration:none;outline:none}
+.btn-primary{color:#fff;background-color:#323131;border:1px solid;border-color:#8d8e8e;border-radius:5px}
+header{position:fixed;display:block;width:100%;z-index:101;background:#fff;border-bottom:3px solid #cccccc3d}
+header >.container{background:#fff}
+.btn{-webkit-transition:all .6s;transition:all .6s;font-size:14px;font-weight:600;padding:1rem 4rem;border-radius:5px}
+.btn-primary:hover{background-color:#eee;border-color:#a39f9f;color:#262626}
+h2{font-size:2.5rem;line-height:3rem;color:#000}
+.container{max-width:1200px;margin:0 auto}
+#colorbox,#cboxOverlay,#cboxWrapper{position:absolute;top:0;left:0;z-index:9999;overflow:hidden;-webkit-transform:translate3d(0,0,0)}
+#cboxWrapper{max-width:none}
+#cboxOverlay{position:fixed;width:100%;height:100%}
+#cboxMiddleLeft,#cboxBottomLeft{clear:left}
+#cboxContent{position:relative}
+#cboxLoadedContent{overflow:auto;-webkit-overflow-scrolling:touch}
+#cboxTitle{margin:0}
+#cboxLoadingOverlay,#cboxLoadingGraphic{position:absolute;top:0;left:0;width:100%;height:100%}
+#cboxPrevious,#cboxNext,#cboxClose,#cboxSlideshow{cursor:pointer}
+.cboxPhoto{float:left;margin:auto;border:0;display:block;max-width:none;-ms-interpolation-mode:bicubic}
+.cboxIframe{width:100%;height:100%;display:block;border:0;padding:0;margin:0}
+#colorbox,#cboxContent,#cboxLoadedContent{box-sizing:content-box;-moz-box-sizing:content-box;-webkit-box-sizing:content-box}
+#cboxOverlay{background:#000;opacity:.9}
+#colorbox{outline:0}
+#cboxTopLeft{width:14px;height:14px;background:url(images/controls.png) no-repeat 0 0}
+#cboxTopCenter{height:14px;background:url(images/border.png) repeat-x top left}
+#cboxTopRight{width:14px;height:14px;background:url(images/controls.png) no-repeat -36px 0}
+#cboxBottomLeft{width:14px;height:43px;background:url(images/controls.png) no-repeat 0 -32px}
+#cboxBottomCenter{height:43px;background:url(images/border.png) repeat-x bottom left}
+#cboxBottomRight{width:14px;height:43px;background:url(images/controls.png) no-repeat -36px -32px}
+#cboxMiddleLeft{width:14px;background:url(images/controls.png) repeat-y -175px 0}
+#cboxMiddleRight{width:14px;background:url(images/controls.png) repeat-y -211px 0}
+#cboxContent{background:#fff;overflow:visible}
+.cboxIframe{background:#fff}
+#cboxError{padding:50px;border:1px solid #ccc}
+#cboxLoadedContent{margin-bottom:5px}
+#cboxLoadingOverlay{background:url(images/loading_background.png) no-repeat center center}
+#cboxLoadingGraphic{background:url(images/loading.gif) no-repeat center center}
+#cboxTitle{position:absolute;bottom:-25px;left:0;text-align:center;width:100%;font-weight:700;color:#7C7C7C}
+#cboxCurrent{position:absolute;bottom:-25px;left:58px;font-weight:700;color:#7C7C7C}
+#cboxPrevious,#cboxNext,#cboxSlideshow,#cboxClose{border:0;padding:0;margin:0;overflow:visible;position:absolute;bottom:-29px;background:url(images/controls.png) no-repeat 0 0;width:23px;height:23px;text-indent:-9999px}
+#cboxPrevious:active,#cboxNext:active,#cboxSlideshow:active,#cboxClose:active{outline:0}
+#cboxPrevious{left:0;background-position:-51px -25px}
+#cboxPrevious:hover{background-position:-51px 0}
+#cboxNext{left:27px;background-position:-75px -25px}
+#cboxNext:hover{background-position:-75px 0}
+#cboxClose{right:0;background-position:-100px -25px}
+#cboxClose:hover{background-position:-100px 0}
+.cboxSlideshow_on #cboxSlideshow{background-position:-125px 0;right:27px}
+.cboxSlideshow_on #cboxSlideshow:hover{background-position:-150px 0}
+.cboxSlideshow_off #cboxSlideshow{background-position:-150px -25px;right:27px}
+.cboxSlideshow_off #cboxSlideshow:hover{background-position:-125px 0}
+.owl-carousel .owl-wrapper:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0}
+.owl-carousel{position:relative;width:100%;-ms-touch-action:pan-y}
+.owl-carousel .owl-wrapper{display:none;position:relative;-webkit-transform:translate3d(0px,0px,0px)}
+.owl-carousel .owl-wrapper-outer{overflow:hidden;position:relative;width:100%}
+.owl-carousel .owl-wrapper-outer.autoHeight{-webkit-transition:height 500ms ease-in-out;-moz-transition:height 500ms ease-in-out;-ms-transition:height 500ms ease-in-out;-o-transition:height 500ms ease-in-out;transition:height 500ms ease-in-out}
+.owl-carousel .owl-item{float:left}
+.owl-controls .owl-page,.owl-controls .owl-buttons div{cursor:pointer}
+.owl-controls{-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-tap-highlight-color:rgba(0,0,0,0)}
+.grabbing{cursor:grabbing}
+.owl-carousel .owl-wrapper,.owl-carousel .owl-item{-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;-ms-backface-visibility:hidden;-webkit-transform:translate3d(0,0,0);-moz-transform:translate3d(0,0,0);-ms-transform:translate3d(0,0,0)}
+header .vcard li{display:inline}
+header .navbar-top.bg-grey.fix{background:#f8f8f8}
+header .navbar-callus.text-left.sm-text-center{width:90%;display:inline-block}
+header .col-md-11{display:inline-block;width:90%}
+header .col-md-1{width:8%;display:inline-block}
+header img#idphoto{display:none}
+header span.url{display:none}
+header a{text-decoration:none;color:#363535}
+header .navbar-socail.text-right.sm-text-center a:hover{border-radius:10px;background:#555;color:#fff}
+header .navbar-socail.text-right.sm-text-center a{padding:10px;right:15px;position:relative;font-weight:700;color:#201f1f}
+header a.navbar-brand img{width:71px;border-radius:35px;border:2px solid #ccc}
+header img.logo-itemprop{display:none}
+header .navbar-header{width:18%;display:inline-block;height:80px;left:30px;position:relative;top:10px}
+header nav.navbar.navbar-default.bootsnav.navbar-fixed{display:inline-block;width:79%;text-align:right;vertical-align:top;height:70px;padding-top:24px}
+header ul.nav.navbar-nav.navbar-right li{display:inline-block}
+header ul.nav.navbar-nav.navbar-right li a{padding:30px 15px;font-weight:600;color:#6f6f6f}
+header ul.nav.navbar-nav.navbar-right li a:hover{background:transparent;color:#000;transition:1s}
+header .navbar-callus.text-left.sm-text-center a:hover{color:#aaa1a1}
+.hello_slid.home{position:relative}
+.hello_slid .slid_item{max-width:1170px;margin:0 auto;text-align:center}
+.hello_slid .overlay{background-color:rgba(25,25,25,0.71);width:100%;height:100%;position:absolute;left:0;top:0}
+.hello_slid h1.text-white{font-size:48px;font-weight:700;color:#fff}
+.hello_slid h2.text-white{font-size:28px; font-weight:500;color:#fff}
+.hello_slid .home_text{z-index:1;position:relative;padding:10px}
+.hello_slid .slid_item{color:#fff;z-index:1;position:relative}
+.hello_slid .btn-default{color:#fff;background-color:transparent;border:1px solid;border-color:#b6b6b6}
+.hello_slid .btn{-webkit-transition:all .6s;transition:all .6s;font-size:14px;font-weight:600;border:1px solid;padding:1rem 4rem}
+.hello_slid .m-top-20{margin-top:20px}
+.hello_slid .home_btns a{margin-left:10px}
+.hello_slid .m-top-40{margin-top:40px}
+.hello_slid .home_btns{margin-left:-10px}
+.hello_slid .btn-default:hover{color:#fff;background-color:#323131;border-color:#959595}
+.hello_slid .btn:hover,.btn:focus,.btn.focus{text-decoration:none}
+.product.item.carousel-element.owl-item{display:inline-table;margin:0 10px}
+.product.item.carousel-element.owl-item.product-adv.mobile{display:none;}
+section#product-section div#carousel{text-align:center;padding:22px 0;    display: flex;}
+section#product-section h2.text-center{text-align:center}
+section#product-section a{text-decoration:none}
+section#product-section .product-name a{color:#6c6d6d}
+section#product-section .products{width:100%;height:430px;display:block;overflow:hidden}
+section#product-section .product-description{white-space:pre-line}
+section#product-section .prodelement{width:230px;height:420px;padding:10px;margin:10px;border-radius:5px;box-shadow:0 0 5px #cacaca;position:relative;text-align:center}
+section#product-section .product-name{font-size:16px;height:38px;text-align:center;font-weight:700;display:block;margin-bottom:15px;overflow:hidden}
+section#product-section .product-image{height:231px;vertical-align:middle;display:table-cell;margin:0 auto}
+section#product-section .product-adv{min-height:405px; padding-top: 10px; }
+section#product-section .product-adv div{display: inline-table;}
+section#product-section .d-top{background:#6c6d6d;text-align:center;color:#fff}
+section#product-section .product-image img{vertical-align:middle;display:block;margin:auto;border-radius:5px;width:200px;padding-left:20px}
+section#product-section .product-price{position:absolute;top:150px;z-index:1;padding:10px;background:#ffff;color:#403f3f;font-weight:700}
+section#product-section .owl-item .product-description{height:50px;overflow:hidden; color: #484545;}
+section#product-section .control-product{text-align:center;font-size:28px}
+section#product-section .control-product a{color:#24282a;padding:10px}
+section#product-section .control-product a:hover{color:#9f9d9d}
+section#product-section a.read-more{display:block;padding:10px;background:#6c6d6d;text-align:center;border-radius:5px;color:#fff;font-size:14px;margin:0 auto;width:150px;text-transform:uppercase;margin:10px auto;position:absolute;bottom:0;left:35px}
+section#product-section a.read-more:hover{background:#959797}
+section#product-section .icon-chevron-left:before{content:"\276E";font-style:initial}
+section#product-section .icon-chevron-right:before{content:"\276F";font-style:initial}
+#features .business_item img{max-height:370px;margin:0 auto}
+#features .business_item{text-align:center}
+#features .business_item ul {     margin-left: 0;     padding-left: 0;}
+#features img.logo-200{float:right;padding:0 30px 30px}
+#features .description{text-align:justify;white-space:pre-line}
+#features .business_item li{font-size:18px;font-weight:300;line-height:2rem}
+#features .list-inline > li{display:inline-block;padding-right:5px;padding-left:5px;    color: black; }
+#features .business_item .business_btn{margin-left:-10px;top:10px;position:relative}
+#features .m-top-20{margin-top:20px}
+#features h2.text-uppercase{text-transform:uppercase;color:#000}
+#features a:hover{color:#ccc}
+#features a.btn-primary:hover{color:#262626}
+.business_item,.roomy-70{padding-top:20px;padding-bottom:70px}
+#business .container{text-align:center}
+#business span.image.item img{max-height:210px;max-width:230px}
+#business span.image.item{width:255px;display:inline-block;padding:12px;text-align:center;vertical-align:top}
+#business h2{color:#000;text-align:center}
+.first-image{height:150px;width:200px;margin:15px;overflow:hidden;text-align:center;float:left}
+.first-image img{border-radius:5px;height:150px}
+.wall-item{max-width:530px;display:grid;min-width:45%;float:left;height:255px;position:relative;margin:10px;box-shadow:0 0 5px #c1c1c1;padding:10px;border-radius:5px}
+div#carousel-wall{display:inline-block;width:100%}
+.wall-date{font-weight:700;margin-top:5px; color:#000}
+.wall-text{height:145px;width:280px;overflow:hidden;white-space:pre-line}
+.wall-basic{display:block;height:190px}
+.imges-footer img{margin:3px}
+li.footer li {
+    padding: 4px 0px;
+}
+.wall-items .imges-footer{display:none}
+.read-wall-post{position:absolute;right:10px;bottom:2px;padding:10px;margin:2px;background:#6b6767;color:#fff;border-radius:5px}
+a.read-wall-post:hover{background:#6c6d6d;color:#ffff}
+.text-center{text-align:center}
+.otzyv-element{width:48%;display:inline-block;text-align:initial;border:1px solid transparent}
+.otzyvi.items{text-align:center}
+.photo_100 img{width:100px;height:100px;float:left;margin:19px;border-radius:50px}
+.otzyv-element:hover{background:#fff;border:1px solid #e1dddd}
+.otzyv-element .text{height:100px;overflow:hidden}
+.fio{margin-top:20px;font-size:15px;font-weight:700}
+.otzyv-element .date{font-weight:700;font-size:12px}
+.photo_100:after{content:"VK";font:normal normal normal 14px/1 FontAwesome;font-size:14px;position:absolute;bottom:-9px;right:15px;background:#f5f5f5;padding:12px;border-radius:29px}
+.photo_100{position:relative;width:138px;height:100px;float:left}
+.otzyv-element:hover .photo_100:after{background:#aeadad;color:#fff}
+.top_link{position:relative;top:-153px}
+a.url-meta{display:none}
+section#action{background:#5b5a58;color:#FFF}
+section#action .action_item.text-center{max-width:800px;display:inline-block;font-size:16px;text-transform:uppercase;text-align:center;padding:0 27px}
+section#action .maine_action{text-align:center;padding:23px}
+section#action .action_btn.text-left.sm-text-center{max-width:400px;display:inline-block}
+section#action .action_btn.text-left.sm-text-center a{color:#fff;background:#000;margin:20px;border:1px solid #9f9696;border-radius:5px;box-shadow:0 0 2px #ccc}
+section#action .action_btn.text-left.sm-text-center a:hover{background:#fff;color:#000}
+.footer.action-lage.bg-black.p-top-80{background:#000;color:#797979;vertical-align:top;padding-bottom:35px}
+.footer a{color:#dbd5d5}
+.footer div#map{padding:40px 0}
 
-	<link rel="stylesheet" href="front.css">
-	<link rel="stylesheet" href="style-newV11.css">
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
+.col-md-12 a.footer-info {
+    padding-top: 35px;
+    display: inline-block;
+}
+.footer .main_footer{text-align:left;max-width:800px;display:inline-block}
+.col-md-3 .p-bottom-30.m-top-80{max-width:600px;display:inline-block}
+.footer .col-md-1{display:inline-block}
+.footer .col-md-8{display:inline-block;vertical-align:top;padding:10px 0}
+.footer .col-md-3{display:inline-block}
+.footer img.this-logo-footer{width:95px}
+.footer ul{margin:0;padding:0}
+footer{position:relative}
+.footer:before{position:absolute;content:"";width:0;height:0;border-left:15px solid transparent;border-right:15px solid transparent;border-top:20px solid #5b5a58;left:50%;top:104px;z-index:1;margin-left:-15px;box-sizing:border-box}
+span.other{padding-top:9px;display:inline-block;vertical-align:top}
+#overlay-input,#overlay-button{display:none}
+.product-page .price{color:#ffa113;font-size:30px;padding:20px 0;min-width:200px;display:block}
+.product-page img{max-width:100%}
+.product-page .image{max-width:500px;float:left;padding:10px}
+.product-page .section{padding-bottom:25px}
+main.main-article{padding-top:150px}
+main.main-article h1{font-size:30px}
 
-<!-- HEADER -->
-<header class="gh-header">
-	<div class="container gh-header-inner">
-		<a class="gh-logo" href="index.html">
-			<span>GOOD HAPPENS</span>
-		</a>
-		<nav class="gh-nav">
-			<input type="checkbox" id="nav-toggle" />
-			<label for="nav-toggle" class="gh-burger"><span></span></label>
-			<ul class="gh-nav-links">
-				<li><a href="#home">Главная</a></li>
-				<li><a href="#gallery">Каталог</a></li>
-				<li><a href="#about">О нас</a></li>
-				<li><a href="#faq-link">ЧаВо</a></li>
-				<li><a href="#contact">Контакты</a></li>
-				<li><a href="https://t.me/GoodHappen_S" class="gh-nav-tg" target="_blank" rel="noopener">Telegram</a></li>
-			</ul>
-		</nav>
-	</div>
-</header>
 
-<!-- HERO -->
-<section id="home" class="gh-hero">
-	<div class="gh-hero-bg"></div>
-	<div class="gh-hero-overlay"></div>
-	<div class="gh-hero-content">
-		<h1>GOOD HAPPENS</h1>
-		<p class="gh-hero-sub">Персональный шоппинг от команды профессионалов</p>
-		<p class="gh-hero-desc">Люксовые и премиальные бренды с доставкой из бутиков по всему миру</p>
-		<div class="gh-hero-btns">
-			<a href="https://t.me/GoodHappen_S" class="gh-btn gh-btn-primary" target="_blank" rel="noopener">
-				<svg class="gh-tg-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-				Написать в Telegram
-			</a>
-			<a href="#gallery" class="gh-btn gh-btn-outline">Смотреть каталог</a>
-		</div>
-	</div>
-</section>
+main.main-article .images-footer{margin:0 auto;display:block;text-align:center;vertical-align:top}
+main.main-article .images-footer a{padding:15px}
+.socedi a.next.next-prev{position:absolute;top:310px;margin-left:620px}
+.socedi a.prev.next-prev{position:absolute;top:310px;margin-left:-670px}
+main.main-article .wall-body{white-space:pre-wrap;padding:10px}
+.socedi{position:absolute;display:block;left:50%;height:50px;top:0}
+.socedi a.next-prev{font-size:31px;width:50px;height:50px;display:inline-block;text-align:center;vertical-align:middle;color:#7a7171;border-radius:5px;border:1px solid #d6d5d5;padding-top:15px}
+.navbar input[type=checkbox]{display:none}
+.buythis{display:none;opacity:0;transition:9s}
+.buythis a{width:150px;display:block;position:relative;font-weight:700;text-align:center;vertical-align:text-top;padding:15px;background:#6f6f6f;border-radius:10px 10px;color:#e9dfdf;box-shadow:0 0 10px #ccc}
+.buythis a:hover{color:#fff;transition:1s;box-shadow:0 0 5px #fff}
+.footer{padding-top:15px}
+.product-page .footer:before{display:none}
+.news .footer:before{display:none}
 
-<!-- ABOUT -->
-<section id="about" class="gh-about">
-	<div class="container">
-		<div class="gh-section-header">
-			<h2>О нас</h2>
-			<div class="gh-divider"></div>
-		</div>
-		<div class="gh-about-grid">
-			<div class="gh-about-img">
-				<img src="foto/photo_2026-05-16_17-15-08.jpg" alt="GOOD HAPPENS" loading="lazy" />
-			</div>
-			<div class="gh-about-text">
-				<p>Наша команда занимается поиском и выкупом позиций люксовых и премиальных брендов с 2013 года.</p>
-				<p>Благодаря наработанным контактам в бутиках по всему миру, а также сотрудничеству с мультибрендами у нас есть возможность находить и выкупать для наших клиентов самые желаемые предметы гардероба.</p>
-				<div class="gh-about-contacts">
-					<a href="https://t.me/GoodHappen_S" class="gh-contact-item" target="_blank" rel="noopener">
-						<svg class="gh-tg-icon-sm" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-						<span>Telegram: @GoodHappen_S</span>
-					</a>
-					<span class="gh-contact-item">
-						<span class="gh-contact-icon">&#9993;</span>
-						<span>Россия, г. Москва и МО</span>
-					</span>
-				</div>
-				<a href="https://t.me/GoodHappen_S" class="gh-btn gh-btn-primary" target="_blank" rel="noopener">
-					<svg class="gh-tg-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-					Написать в Telegram
-				</a>
-			</div>
-		</div>
-	</div>
-</section>
+.desctop-adv{
+	height: 90px;
+	width: 100%;
+}
+.modile-adv{
+	height: 50px;
+	width: 100%;
+}
+.adv-first-screen {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    z-index: 2;
+	overflow: hidden;
+}
+.modile-adv{
+	display:none;
+}
+@media (max-height: 620px) {
+	.desctop-adv{
+		display:none;
+	}
+}
+@media (max-width: 600px) {
+	.desctop-adv{
+		display:none;
+	}
+	.modile-adv{
+		display:block;
+	}
+}
+@media (max-width: 450px) {
 
-<!-- GALLERY / CATALOG -->
-<section id="gallery" class="gh-gallery">
-	<div class="container">
-		<div class="gh-section-header">
-			<h2>Наш каталог</h2>
-			<div class="gh-divider"></div>
-			<p class="gh-section-sub">Для покупки любого товара пишите в Telegram <a href="https://t.me/GoodHappen_S" target="_blank" rel="noopener">@GoodHappen_S</a></p>
-		</div>
-		<div class="gh-gallery-grid">
+section#product-section .prodelement{margin:10px auto}
+.otzyv-element{width:100%}
+.wall-item{height:auto}
+.wall-basic{height:auto}
+.first-image{text-align:center;float:none}
+.read-wall-post{position:relative;margin:10px;display:inline-block}
+#features img.logo-200{float:none;padding:0 10px 10px 5px}
+section#action .btn{padding:0}
+section#action .action_btn.text-left.sm-text-center a{background:transparent;margin:0;border:0;box-shadow:0 0 2px transparent}
+.product-page .description{width:320px;display:block}
+.product-page .image{float:none;max-width:200px}
+.product-page .btn{padding:10px}
+}
+@media (max-width: 870px) {
+.product-page .image{float:none;max-width:350px}
+}
+@media (max-width: 1100px) {
+	.socedi a.next.next-prev{position:relative;top:0;margin-left:0}
+	.socedi a.prev.next-prev{position:relative;top:0;margin-left:0}
+	.socedi{position:relative;display:block;left:0;height:50px;top:0;margin:0 auto;width:110px;margin-top:19px;margin-bottom:25px}
+	.top_link{position:relative;top:-95px}
+	.hello_slid h1.text-white{font-size:38px}
+	#features .description{margin:10px; color: #484545;}
+	.container{padding:0 7px}
+	.sendreviews-page .container {padding: 0 15px;}
+	.wall-item{max-width:10000px;display:inline-block;width:90%; color:#000000;}
+	.wall-text{height:134px;width:auto;overflow:hidden;white-space:pre-line}
+	.footer:before{display:none}
+	body .home{padding-top:150px;padding-bottom:140px;width:100%}
+	header ul.nav.navbar-nav.navbar-right li a:hover{background:#ccc0;color:#fff0;transition:.1s}
+	header ul.nav.navbar-nav.navbar-right li{display:block;width:100%;text-align:center;padding:10px;margin:10px}
+	div#overlay{top:0;left:-38px;opacity:.97;box-shadow:0 0 5px #ccc}
+	#overlay{height:100vh;width:100vw;background:#fff;z-index:2;visibility:hidden;position:fixed}
+	header a.navbar-brand img{top:15px;left:-20px;position:relative}
+	header .navbar-header{height:auto;max-height:45px}
+	header nav.navbar.navbar-default.bootsnav.navbar-fixed{display:inline-block;width:100%;text-align:right;vertical-align:top;height:0;padding-top:0}
+	.vcard{display:none}
+	#overlay-button{display:block}
+	header .navbar-header{width:100%;text-align:center}
+	a.navbar-brand{top:20px;position:relative}
+	input[type=checkbox]{display:none}
+	input[type=checkbox]:checked ~ #overlay{visibility:visible}
+	#overlay-button.transfer span:hover span,span{background:transparent}
+	#overlay-button.transfer span{background-color:transparent}
+	#overlay-button.transfer span:before{transform:rotate(45deg) translate(7px,7px)}
+	#overlay-button.transfer span:after{transform:rotate(-45deg) translate(7px,-7px)}
+	#overlay.active{visibility:visible}
+	#overlay ul{display:flex;justify-content:center;align-items:center;flex-direction:column;text-align:center;padding-left:0;list-style-type:none}
+	#overlay ul li{padding:1em}
+	#overlay ul li a{color:#000;text-decoration:none}
+	#overlay ul li a:hover{color:#ccc0;text-decoration:none}
+	.col-md-4 {
+		width: 100%!important;
+		display: inline-block;
+		vertical-align: top;
+		padding-bottom: 15px;
+	}
+	
+	
+	
+}
+@keyframes bugfix {
+from{padding:0}
+to{padding:0}
+}
+@-webkit-keyframes bugfix {
+from{padding:0}
+to{padding:0}
+}
+#overlay-button{position:absolute;left:2em;top:3em;z-index:5;cursor:pointer;user-select:none}
+#overlay-button span{height:4px;width:35px;border-radius:2px;background-color:#000;position:relative;display:block;transition:all .2s ease-in-out}
+#overlay-button span:before{top:-10px;visibility:visible}
+#overlay-button span:after{top:10px}
+#overlay-button span:before,#overlay-button span:after{height:4px;width:35px;border-radius:2px;background-color:#000;position:absolute;content:"";transition:all .2s ease-in-out;left:0}
+#overlay-button:hover span:before,#overlay-button:hover span:after{background:#333332}
+section#adv-section {
+    max-height: 90px;
+    z-index: 105;
+    display: block;
+    max-width: 1000px;
+    margin: 0px auto 0 auto;
+}
+.col-md-6 {
+    width: 47%;
+    display: inline-block;
+    vertical-align: top;
+}
+.col-md-8 {
+	vertical-align: top;
+}
+.col-md-4 {
+    width: 34%;
+    display: inline-block;
+	vertical-align: top;
+}
 
-			<div class="gh-product-card">
-				<div class="gh-product-img">
-					<a href='foto/photo_2026-05-21_14-37-35.jpg' class='colorbox-gallery' title='Туфли Chanel белые с черным мысом' rel='img-gallery'>
-						<img loading='lazy' src='foto/photo_2026-05-21_14-37-35.jpg' alt='Туфли Chanel белые с черным мысом'/>
-					</a>
-				</div>
-				<div class="gh-product-info">
-					<p class="gh-product-name">Туфли Chanel белые с черным мысом</p>
-					<a href="https://t.me/GoodHappen_S" class="gh-product-buy" target="_blank" rel="noopener">
-						<svg class="gh-tg-icon-xs" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-						Купить — @GoodHappen_S
-					</a>
-				</div>
-			</div>
-			<div class="gh-product-card">
-				<div class="gh-product-img">
-					<a href='foto/photo_2026-05-21_14-37-37.jpg' class='colorbox-gallery' title='Туфли Chanel черные' rel='img-gallery'>
-						<img loading='lazy' src='foto/photo_2026-05-21_14-37-37.jpg' alt='Туфли Chanel черные'/>
-					</a>
-				</div>
-				<div class="gh-product-info">
-					<p class="gh-product-name">Туфли Chanel черные</p>
-					<a href="https://t.me/GoodHappen_S" class="gh-product-buy" target="_blank" rel="noopener">
-						<svg class="gh-tg-icon-xs" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-						Купить — @GoodHappen_S
-					</a>
-				</div>
-			</div>
-			<div class="gh-product-card">
-				<div class="gh-product-img">
-					<a href='foto/photo_2026-05-21_14-37-39.jpg' class='colorbox-gallery' title='Туфли Chanel белые классические' rel='img-gallery'>
-						<img loading='lazy' src='foto/photo_2026-05-21_14-37-39.jpg' alt='Туфли Chanel белые классические'/>
-					</a>
-				</div>
-				<div class="gh-product-info">
-					<p class="gh-product-name">Туфли Chanel белые классические</p>
-					<a href="https://t.me/GoodHappen_S" class="gh-product-buy" target="_blank" rel="noopener">
-						<svg class="gh-tg-icon-xs" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-						Купить — @GoodHappen_S
-					</a>
-				</div>
-			</div>
-			<div class="gh-product-card">
-				<div class="gh-product-img">
-					<a href='foto/photo_2026-05-21_14-37-40.jpg' class='colorbox-gallery' title='Босоножки Chanel бежевые замша' rel='img-gallery'>
-						<img loading='lazy' src='foto/photo_2026-05-21_14-37-40.jpg' alt='Босоножки Chanel бежевые замша'/>
-					</a>
-				</div>
-				<div class="gh-product-info">
-					<p class="gh-product-name">Босоножки Chanel бежевые замша</p>
-					<a href="https://t.me/GoodHappen_S" class="gh-product-buy" target="_blank" rel="noopener">
-						<svg class="gh-tg-icon-xs" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-						Купить — @GoodHappen_S
-					</a>
-				</div>
-			</div>
-			<div class="gh-product-card">
-				<div class="gh-product-img">
-					<a href='foto/photo_2026-05-21_18-26-27.jpg' class='colorbox-gallery' title='Chanel Maxi Flap леопард Metiers d&#39;Art' rel='img-gallery'>
-						<img loading='lazy' src='foto/photo_2026-05-21_18-26-27.jpg' alt='Chanel Maxi Flap леопард Metiers d&#39;Art'/>
-					</a>
-				</div>
-				<div class="gh-product-info">
-					<p class="gh-product-name">Chanel Maxi Flap леопард Metiers d'Art</p>
-					<a href="https://t.me/GoodHappen_S" class="gh-product-buy" target="_blank" rel="noopener">
-						<svg class="gh-tg-icon-xs" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-						Купить — @GoodHappen_S
-					</a>
-				</div>
-			</div>
-			<div class="gh-product-card">
-				<div class="gh-product-img">
-					<a href='foto/photo_2026-05-21_12-36-10.jpg' class='colorbox-gallery' title='Chanel ожерелье жемчуг' rel='img-gallery'>
-						<img loading='lazy' src='foto/photo_2026-05-21_12-36-10.jpg' alt='Chanel ожерелье жемчуг'/>
-					</a>
-				</div>
-				<div class="gh-product-info">
-					<p class="gh-product-name">Chanel ожерелье жемчуг</p>
-					<a href="https://t.me/GoodHappen_S" class="gh-product-buy" target="_blank" rel="noopener">
-						<svg class="gh-tg-icon-xs" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-						Купить — @GoodHappen_S
-					</a>
-				</div>
-			</div>
-			<div class="gh-product-card">
-				<div class="gh-product-img">
-					<a href='foto/photo_2026-05-21_12-36-15.jpg' class='colorbox-gallery' title='Chanel Pearl Ball bag' rel='img-gallery'>
-						<img loading='lazy' src='foto/photo_2026-05-21_12-36-15.jpg' alt='Chanel Pearl Ball bag'/>
-					</a>
-				</div>
-				<div class="gh-product-info">
-					<p class="gh-product-name">Chanel Pearl Ball bag</p>
-					<a href="https://t.me/GoodHappen_S" class="gh-product-buy" target="_blank" rel="noopener">
-						<svg class="gh-tg-icon-xs" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-						Купить — @GoodHappen_S
-					</a>
-				</div>
-			</div>
-			<div class="gh-product-card">
-				<div class="gh-product-img">
-					<a href='foto/photo_2026-05-20_20-08-28.jpg' class='colorbox-gallery' title='Chanel тоут бордо + сандали Hermes' rel='img-gallery'>
-						<img loading='lazy' src='foto/photo_2026-05-20_20-08-28.jpg' alt='Chanel тоут бордо + сандали Hermes'/>
-					</a>
-				</div>
-				<div class="gh-product-info">
-					<p class="gh-product-name">Chanel тоут бордо + сандали Hermes</p>
-					<a href="https://t.me/GoodHappen_S" class="gh-product-buy" target="_blank" rel="noopener">
-						<svg class="gh-tg-icon-xs" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-						Купить — @GoodHappen_S
-					</a>
-				</div>
-			</div>
-			<div class="gh-product-card">
-				<div class="gh-product-img">
-					<a href='foto/photo_2026-05-20_22-49-39.jpg' class='colorbox-gallery' title='Hermes Birkin кремовый GHW' rel='img-gallery'>
-						<img loading='lazy' src='foto/photo_2026-05-20_22-49-39.jpg' alt='Hermes Birkin кремовый GHW'/>
-					</a>
-				</div>
-				<div class="gh-product-info">
-					<p class="gh-product-name">Hermes Birkin кремовый GHW</p>
-					<a href="https://t.me/GoodHappen_S" class="gh-product-buy" target="_blank" rel="noopener">
-						<svg class="gh-tg-icon-xs" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-						Купить — @GoodHappen_S
-					</a>
-				</div>
-			</div>
-			<div class="gh-product-card">
-				<div class="gh-product-img">
-					<a href='foto/photo_2026-05-20_22-49-39%20%282%29.jpg' class='colorbox-gallery' title='Hermes Birkin шоколадный PHW' rel='img-gallery'>
-						<img loading='lazy' src='foto/photo_2026-05-20_22-49-39%20%282%29.jpg' alt='Hermes Birkin шоколадный PHW'/>
-					</a>
-				</div>
-				<div class="gh-product-info">
-					<p class="gh-product-name">Hermes Birkin шоколадный PHW</p>
-					<a href="https://t.me/GoodHappen_S" class="gh-product-buy" target="_blank" rel="noopener">
-						<svg class="gh-tg-icon-xs" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-						Купить — @GoodHappen_S
-					</a>
-				</div>
-			</div>
-			<div class="gh-product-card">
-				<div class="gh-product-img">
-					<a href='foto/photo_2026-05-14_18-44-24.jpg' class='colorbox-gallery' title='Hermes Kelly 25 розовый PHW' rel='img-gallery'>
-						<img loading='lazy' src='foto/photo_2026-05-14_18-44-24.jpg' alt='Hermes Kelly 25 розовый PHW'/>
-					</a>
-				</div>
-				<div class="gh-product-info">
-					<p class="gh-product-name">Hermes Kelly 25 розовый PHW</p>
-					<a href="https://t.me/GoodHappen_S" class="gh-product-buy" target="_blank" rel="noopener">
-						<svg class="gh-tg-icon-xs" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-						Купить — @GoodHappen_S
-					</a>
-				</div>
-			</div>
-			<div class="gh-product-card">
-				<div class="gh-product-img">
-					<a href='foto/photo_2026-05-14_18-45-36.jpg' class='colorbox-gallery' title='Hermes Kelly 25 черный GHW' rel='img-gallery'>
-						<img loading='lazy' src='foto/photo_2026-05-14_18-45-36.jpg' alt='Hermes Kelly 25 черный GHW'/>
-					</a>
-				</div>
-				<div class="gh-product-info">
-					<p class="gh-product-name">Hermes Kelly 25 черный GHW</p>
-					<a href="https://t.me/GoodHappen_S" class="gh-product-buy" target="_blank" rel="noopener">
-						<svg class="gh-tg-icon-xs" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-						Купить — @GoodHappen_S
-					</a>
-				</div>
-			</div>
-			<div class="gh-product-card">
-				<div class="gh-product-img">
-					<a href='foto/photo_2026-05-16_17-15-08.jpg' class='colorbox-gallery' title='Hermes Kelly Mini кремовый' rel='img-gallery'>
-						<img loading='lazy' src='foto/photo_2026-05-16_17-15-08.jpg' alt='Hermes Kelly Mini кремовый'/>
-					</a>
-				</div>
-				<div class="gh-product-info">
-					<p class="gh-product-name">Hermes Kelly Mini кремовый</p>
-					<a href="https://t.me/GoodHappen_S" class="gh-product-buy" target="_blank" rel="noopener">
-						<svg class="gh-tg-icon-xs" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-						Купить — @GoodHappen_S
-					</a>
-				</div>
-			</div>
-			<div class="gh-product-card">
-				<div class="gh-product-img">
-					<a href='foto/photo_2026-05-15_18-31-52.jpg' class='colorbox-gallery' title='Audemars Piguet Royal Oak Skeleton' rel='img-gallery'>
-						<img loading='lazy' src='foto/photo_2026-05-15_18-31-52.jpg' alt='Audemars Piguet Royal Oak Skeleton'/>
-					</a>
-				</div>
-				<div class="gh-product-info">
-					<p class="gh-product-name">Audemars Piguet Royal Oak Skeleton</p>
-					<a href="https://t.me/GoodHappen_S" class="gh-product-buy" target="_blank" rel="noopener">
-						<svg class="gh-tg-icon-xs" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-						Купить — @GoodHappen_S
-					</a>
-				</div>
-			</div>
-			<div class="gh-product-card">
-				<div class="gh-product-img">
-					<a href='foto/photo_2026-05-18_12-17-06.jpg' class='colorbox-gallery' title='AP x Swatch Royal Pop карманные часы' rel='img-gallery'>
-						<img loading='lazy' src='foto/photo_2026-05-18_12-17-06.jpg' alt='AP x Swatch Royal Pop карманные часы'/>
-					</a>
-				</div>
-				<div class="gh-product-info">
-					<p class="gh-product-name">AP x Swatch Royal Pop карманные часы</p>
-					<a href="https://t.me/GoodHappen_S" class="gh-product-buy" target="_blank" rel="noopener">
-						<svg class="gh-tg-icon-xs" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-						Купить — @GoodHappen_S
-					</a>
-				</div>
-			</div>
-			<div class="gh-product-card">
-				<div class="gh-product-img">
-					<a href='foto/photo_2026-05-18_12-17-06%20%282%29.jpg' class='colorbox-gallery' title='AP x Swatch Royal Oak часы желтый' rel='img-gallery'>
-						<img loading='lazy' src='foto/photo_2026-05-18_12-17-06%20%282%29.jpg' alt='AP x Swatch Royal Oak часы желтый'/>
-					</a>
-				</div>
-				<div class="gh-product-info">
-					<p class="gh-product-name">AP x Swatch Royal Oak часы желтый</p>
-					<a href="https://t.me/GoodHappen_S" class="gh-product-buy" target="_blank" rel="noopener">
-						<svg class="gh-tg-icon-xs" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-						Купить — @GoodHappen_S
-					</a>
-				</div>
-			</div>
-			<div class="gh-product-card">
-				<div class="gh-product-img">
-					<a href='foto/photo_2026-05-18_12-17-09.jpg' class='colorbox-gallery' title='AP x Swatch Royal Oak часы черный' rel='img-gallery'>
-						<img loading='lazy' src='foto/photo_2026-05-18_12-17-09.jpg' alt='AP x Swatch Royal Oak часы черный'/>
-					</a>
-				</div>
-				<div class="gh-product-info">
-					<p class="gh-product-name">AP x Swatch Royal Oak часы черный</p>
-					<a href="https://t.me/GoodHappen_S" class="gh-product-buy" target="_blank" rel="noopener">
-						<svg class="gh-tg-icon-xs" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-						Купить — @GoodHappen_S
-					</a>
-				</div>
-			</div>
-			<div class="gh-product-card">
-				<div class="gh-product-img">
-					<a href='foto/photo_2026-05-16_12-38-18.jpg' class='colorbox-gallery' title='AP x Swatch Royal Pop брелок зеленый' rel='img-gallery'>
-						<img loading='lazy' src='foto/photo_2026-05-16_12-38-18.jpg' alt='AP x Swatch Royal Pop брелок зеленый'/>
-					</a>
-				</div>
-				<div class="gh-product-info">
-					<p class="gh-product-name">AP x Swatch Royal Pop брелок зеленый</p>
-					<a href="https://t.me/GoodHappen_S" class="gh-product-buy" target="_blank" rel="noopener">
-						<svg class="gh-tg-icon-xs" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-						Купить — @GoodHappen_S
-					</a>
-				</div>
-			</div>
-			<div class="gh-product-card">
-				<div class="gh-product-img">
-					<a href='foto/photo_2026-05-16_12-38-19.jpg' class='colorbox-gallery' title='AP x Swatch Royal Pop брелок желтый' rel='img-gallery'>
-						<img loading='lazy' src='foto/photo_2026-05-16_12-38-19.jpg' alt='AP x Swatch Royal Pop брелок желтый'/>
-					</a>
-				</div>
-				<div class="gh-product-info">
-					<p class="gh-product-name">AP x Swatch Royal Pop брелок желтый</p>
-					<a href="https://t.me/GoodHappen_S" class="gh-product-buy" target="_blank" rel="noopener">
-						<svg class="gh-tg-icon-xs" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-						Купить — @GoodHappen_S
-					</a>
-				</div>
-			</div>
-			<div class="gh-product-card">
-				<div class="gh-product-img">
-					<a href='foto/photo_2026-05-16_12-51-12.jpg' class='colorbox-gallery' title='AP x Swatch Bioceramic Royal Pop коллекция' rel='img-gallery'>
-						<img loading='lazy' src='foto/photo_2026-05-16_12-51-12.jpg' alt='AP x Swatch Bioceramic Royal Pop коллекция'/>
-					</a>
-				</div>
-				<div class="gh-product-info">
-					<p class="gh-product-name">AP x Swatch Bioceramic Royal Pop коллекция</p>
-					<a href="https://t.me/GoodHappen_S" class="gh-product-buy" target="_blank" rel="noopener">
-						<svg class="gh-tg-icon-xs" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-						Купить — @GoodHappen_S
-					</a>
-				</div>
-			</div>
-			<div class="gh-product-card">
-				<div class="gh-product-img">
-					<a href='foto/photo_2026-04-24_19-49-11.jpg' class='colorbox-gallery' title='Rolex Datejust черный бриллиантовый' rel='img-gallery'>
-						<img loading='lazy' src='foto/photo_2026-04-24_19-49-11.jpg' alt='Rolex Datejust черный бриллиантовый'/>
-					</a>
-				</div>
-				<div class="gh-product-info">
-					<p class="gh-product-name">Rolex Datejust черный бриллиантовый</p>
-					<a href="https://t.me/GoodHappen_S" class="gh-product-buy" target="_blank" rel="noopener">
-						<svg class="gh-tg-icon-xs" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-						Купить — @GoodHappen_S
-					</a>
-				</div>
-			</div>
-			<div class="gh-product-card">
-				<div class="gh-product-img">
-					<a href='foto/photo_2026-04-11_16-38-32.jpg' class='colorbox-gallery' title='Rolex Datejust коллекция' rel='img-gallery'>
-						<img loading='lazy' src='foto/photo_2026-04-11_16-38-32.jpg' alt='Rolex Datejust коллекция'/>
-					</a>
-				</div>
-				<div class="gh-product-info">
-					<p class="gh-product-name">Rolex Datejust коллекция</p>
-					<a href="https://t.me/GoodHappen_S" class="gh-product-buy" target="_blank" rel="noopener">
-						<svg class="gh-tg-icon-xs" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-						Купить — @GoodHappen_S
-					</a>
-				</div>
-			</div>
-			<div class="gh-product-card">
-				<div class="gh-product-img">
-					<a href='foto/photo_2026-04-03_19-39-23.jpg' class='colorbox-gallery' title='Rolex Datejust синий roman' rel='img-gallery'>
-						<img loading='lazy' src='foto/photo_2026-04-03_19-39-23.jpg' alt='Rolex Datejust синий roman'/>
-					</a>
-				</div>
-				<div class="gh-product-info">
-					<p class="gh-product-name">Rolex Datejust синий roman</p>
-					<a href="https://t.me/GoodHappen_S" class="gh-product-buy" target="_blank" rel="noopener">
-						<svg class="gh-tg-icon-xs" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-						Купить — @GoodHappen_S
-					</a>
-				</div>
-			</div>
-			<div class="gh-product-card">
-				<div class="gh-product-img">
-					<a href='foto/photo_2026-04-03_19-39-23%20%282%29.jpg' class='colorbox-gallery' title='Rolex Datejust серебристый' rel='img-gallery'>
-						<img loading='lazy' src='foto/photo_2026-04-03_19-39-23%20%282%29.jpg' alt='Rolex Datejust серебристый'/>
-					</a>
-				</div>
-				<div class="gh-product-info">
-					<p class="gh-product-name">Rolex Datejust серебристый</p>
-					<a href="https://t.me/GoodHappen_S" class="gh-product-buy" target="_blank" rel="noopener">
-						<svg class="gh-tg-icon-xs" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-						Купить — @GoodHappen_S
-					</a>
-				</div>
-			</div>
-			<div class="gh-product-card">
-				<div class="gh-product-img">
-					<a href='foto/photo_2026-04-03_19-39-25.jpg' class='colorbox-gallery' title='Rolex Datejust темно-синий' rel='img-gallery'>
-						<img loading='lazy' src='foto/photo_2026-04-03_19-39-25.jpg' alt='Rolex Datejust темно-синий'/>
-					</a>
-				</div>
-				<div class="gh-product-info">
-					<p class="gh-product-name">Rolex Datejust темно-синий</p>
-					<a href="https://t.me/GoodHappen_S" class="gh-product-buy" target="_blank" rel="noopener">
-						<svg class="gh-tg-icon-xs" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-						Купить — @GoodHappen_S
-					</a>
-				</div>
-			</div>
-			<div class="gh-product-card">
-				<div class="gh-product-img">
-					<a href='foto/photo_2026-01-26_10-22-22.jpg' class='colorbox-gallery' title='Rolex Cosmograph Daytona Skeleton Platinum' rel='img-gallery'>
-						<img loading='lazy' src='foto/photo_2026-01-26_10-22-22.jpg' alt='Rolex Cosmograph Daytona Skeleton Platinum'/>
-					</a>
-				</div>
-				<div class="gh-product-info">
-					<p class="gh-product-name">Rolex Cosmograph Daytona Skeleton Platinum</p>
-					<a href="https://t.me/GoodHappen_S" class="gh-product-buy" target="_blank" rel="noopener">
-						<svg class="gh-tg-icon-xs" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-						Купить — @GoodHappen_S
-					</a>
-				</div>
-			</div>
-			<div class="gh-product-card">
-				<div class="gh-product-img">
-					<a href='foto/photo_2025-12-05_16-09-58.jpg' class='colorbox-gallery' title='Rolex Sea-Dweller Steel and Gold' rel='img-gallery'>
-						<img loading='lazy' src='foto/photo_2025-12-05_16-09-58.jpg' alt='Rolex Sea-Dweller Steel and Gold'/>
-					</a>
-				</div>
-				<div class="gh-product-info">
-					<p class="gh-product-name">Rolex Sea-Dweller Steel and Gold</p>
-					<a href="https://t.me/GoodHappen_S" class="gh-product-buy" target="_blank" rel="noopener">
-						<svg class="gh-tg-icon-xs" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-						Купить — @GoodHappen_S
-					</a>
-				</div>
-			</div>
-			<div class="gh-product-card">
-				<div class="gh-product-img">
-					<a href='foto/photo_2025-12-04_16-48-38.jpg' class='colorbox-gallery' title='Rolex Datejust синий jubilee' rel='img-gallery'>
-						<img loading='lazy' src='foto/photo_2025-12-04_16-48-38.jpg' alt='Rolex Datejust синий jubilee'/>
-					</a>
-				</div>
-				<div class="gh-product-info">
-					<p class="gh-product-name">Rolex Datejust синий jubilee</p>
-					<a href="https://t.me/GoodHappen_S" class="gh-product-buy" target="_blank" rel="noopener">
-						<svg class="gh-tg-icon-xs" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-						Купить — @GoodHappen_S
-					</a>
-				</div>
-			</div>
-		</div>
 
-		<!-- CTA Banner -->
-		<div class="gh-cta-banner">
-			<svg class="gh-tg-icon-lg" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-			<div>
-				<h3>Хотите заказать? Пишите нам!</h3>
-				<p>Для покупки любого товара свяжитесь с нами в Telegram</p>
-			</div>
-			<a href="https://t.me/GoodHappen_S" class="gh-btn gh-btn-primary" target="_blank" rel="noopener">@GoodHappen_S</a>
-		</div>
+/**/
 
-	</div>
-</section>
+.recomends-ads{
+    width: 100%;
+    display: inline-block;
+    float: left;
+    position: relative;
+}
+/*
+.ads-news{
+	display: inline-block;
+    max-width: 560px;
+    margin: 8px;
+}
+*/
 
-<!-- FAQ -->
-<section id="faq-link" class="gh-faq">
-	<div class="container">
-		<div class="gh-section-header">
-			<h2>Частые вопросы</h2>
-			<div class="gh-divider"></div>
-		</div>
-		<div class="gh-faq-list" itemscope itemtype="https://schema.org/FAQPage">
+.desctop{
+	display: block;
+}
+.mobile{
+	display: none;
+}
 
-			<div class="gh-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-				<h3 itemprop="name">Что такое GOOD HAPPENS и чем вы занимаетесь?</h3>
-				<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-					<p itemprop="text">GOOD HAPPENS - это персональный шоппинг, который занимается поиском и выкупом позиций люксовых и премиальных брендов с 2013 года.</p>
-				</div>
-			</div>
+.mobile-only{
+	display: none;
+}
 
-			<div class="gh-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-				<h3 itemprop="name">Как можно связаться с вами для консультации?</h3>
-				<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-					<p itemprop="text">Свяжитесь с нами в Telegram: <a href="https://t.me/GoodHappen_S" target="_blank" rel="noopener">@GoodHappen_S</a> — мы на связи ежедневно.</p>
-				</div>
-			</div>
+.desktop-only{
+	display: block;
+}
 
-			<div class="gh-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-				<h3 itemprop="name">Какие бренды вы представляете?</h3>
-				<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-					<p itemprop="text">Мы работаем с различными люксовыми и премиальными брендами, включая Burberry, Celine, Chanel, Hermes, Givenchy, Alexander Wang, Jacquemus и другие.</p>
-				</div>
-			</div>
+@media (max-width: 1100px) {
+    .mobile-only {
+        display: block;
+    }
+    .desktop-only{
+        display: none;
+    }
 
-			<div class="gh-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-				<h3 itemprop="name">Можно ли заказать новинки из бутиков через вашу компанию?</h3>
-				<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-					<p itemprop="text">Да, вы можете заказать новинки из бутиков, написав нам в Telegram: <a href="https://t.me/GoodHappen_S" target="_blank" rel="noopener">@GoodHappen_S</a>.</p>
-				</div>
-			</div>
 
-			<div class="gh-faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-				<h3 itemprop="name">Как оформить заказ?</h3>
-				<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-					<p itemprop="text">Напишите нам в Telegram <a href="https://t.me/GoodHappen_S" target="_blank" rel="noopener">@GoodHappen_S</a> — мы подберём нужную позицию, рассчитаем стоимость и организуем доставку.</p>
-				</div>
-			</div>
+	.mobile {
+		display: block;
+	}
+	.desctop{
+		display: none;
+	}
 
-		</div>
-	</div>
-</section>
+	.product.item.carousel-element.owl-item.modile{
+		display:inline-table;
+	}
 
-<!-- CONTACT -->
-<section id="contact" class="gh-contact">
-	<div class="container">
-		<div class="gh-section-header">
-			<h2>Контакты</h2>
-			<div class="gh-divider"></div>
-		</div>
-		<div class="gh-contact-grid">
-			<div class="gh-contact-card gh-contact-card-accent">
-				<div class="gh-contact-card-icon">
-					<svg class="gh-tg-icon-lg" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-				</div>
-				<h3>Telegram</h3>
-				<a href="https://t.me/GoodHappen_S" target="_blank" rel="noopener">@GoodHappen_S</a>
-			</div>
-			<div class="gh-contact-card">
-				<div class="gh-contact-card-icon">&#128205;</div>
-				<h3>Адрес</h3>
-				<span>Россия, г. Москва и МО</span>
-			</div>
-		</div>
-	</div>
-</section>
 
-<!-- FOOTER -->
-<footer class="gh-footer">
-	<div class="container">
-		<div class="gh-footer-inner">
-			<div class="gh-footer-brand">
-				<span>GOOD HAPPENS</span>
-				<p class="gh-footer-tagline">Персональный шоппинг с 2013 года</p>
-			</div>
-			<div class="gh-footer-links">
-				<a href="#home">Главная</a>
-				<a href="#gallery">Каталог</a>
-				<a href="#about">О нас</a>
-				<a href="#contact">Контакты</a>
-			</div>
-			<div class="gh-footer-tg">
-				<a href="https://t.me/GoodHappen_S" target="_blank" rel="noopener">
-					<svg class="gh-tg-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-					@GoodHappen_S
-				</a>
-			</div>
-		</div>
-		<div class="gh-footer-bottom">
-			<p>&copy; 2013&ndash;2026 GOOD HAPPENS. Персональный шоппинг.</p>
-		</div>
-	</div>
-</footer>
+	section#product-section .product-adv {
+		height: 430px;
+		padding-top: 10px;
+		margin-top: 10px;
+		display: inline-table;
+		width: 270px;
 
-<!-- Floating Telegram button -->
-<a href="https://t.me/GoodHappen_S" class="gh-float-tg" target="_blank" rel="noopener" title="Написать в Telegram @GoodHappen_S">
-	<svg viewBox="0 0 24 24" fill="#fff"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-</a>
+		box-shadow: 0 0 3px #b7b4b4;
+		border-radius: 5px;
+	}
+	
+	
+}
 
-<script src='allnew-new-v7.js'></script>
 
-<!-- Smooth scroll for anchor links -->
-<script>
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-	a.addEventListener('click', function(e) {
-		const target = document.querySelector(this.getAttribute('href'));
-		if (target) {
-			e.preventDefault();
-			target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-			const toggle = document.getElementById('nav-toggle');
-			if (toggle) toggle.checked = false;
-		}
-	});
-});
-</script>
 
-</body>
-</html>
+.connect-links.upconnect{
+	bottom: 0px;
+	transition:1s;
+	
+}
+.connect-links {
+    position: fixed;
+    bottom: -73px;
+    width: 100%;
+    display: flex;
+    align-content: center;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    z-index: 2;
+    background: #6e6c6cf0;
+    box-shadow: 0 0 5px #ada5a5
+	transition:1s;
+	
+}
+
+
+
+
+
+
+.connect-links a {
+    width: 50px;
+    height: 45px;
+    z-index: 151;
+    width: 90px;
+    text-align: center;
+    color: #ffffff;
+    padding: 15px 20px;
+    border-radius: 60px;
+    font-size: 9px;
+    position: relative;
+    vertical-align: top;
+}
+.connect-links img {
+    width: 28px;
+    height: 28px;
+}
+.connect-links a:hover img,
+.connect-links a:active img {
+    width: 35px;
+    height: 35px;
+}
+
+
+
+.connect-links a .text {
+    padding-top: 5px;
+}
+
+.connect-links a:hover {
+    color: white;
+    transition: 0.3s;
+    border-radius: 60px;
+}
+
+.connect-links a.phone img {
+    width: 25px;
+}
+
+.connect-links .phone-text.text {
+	margin-top: 5px;
+	display: block;
+}
+.connect-links .hoverbtn {
+    color: #fff;
+    position: absolute;
+    top: -37px;
+    height: 35px;
+    background: #3a3838f0;
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
+    padding: 3px 22px 0px 22px;
+    font-size: 18px;
+    border-radius: 5px 5px 0px 0px;
+    left: 10%;
+	
+}
+
+body .home{
+    position: relative;
+    padding-top: 250px;
+    padding-bottom: 200px;
+    width: 100%;
+}
+
+@media (max-width: 700px) {
+    body .home{
+        padding-top: 160px;
+        padding-bottom: 140px;
+    }
+}
+
+
+.connect-links.upconnect .pulse{
+    top: -30px;
+    transition: 1.5s;
+    animation: none;
+    width: 40px;
+    height: 40px;
+    background: #0a0a0ac4;
+
+}
+
+.call{
+	opacity: 1;
+	transition: 1s
+}
+.connect-links.upconnect .call{
+	position: absolute;
+	opacity: 0;
+}
+.x{
+	opacity: 0;	
+}
+.connect-links.upconnect .x{
+    opacity: 1;
+    transition: 1s;
+    padding: 13px;
+    width: 15px;
+    height: 15px;
+
+}
+
+
+
+.pulse {
+    margin: 0px;
+    display: block;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    /*background: #2ea53dc4;  */
+	background: #0084ffc2;
+    cursor: pointer;
+    box-shadow: 0 0 0 rgb(204 169 44 / 40%);
+    animation: pulse 2s infinite;
+    position: absolute;
+    top: -145px;
+    right: 5%;
+	border: 2px solid #cdcdcdc2;
+}
+span.pulse img {
+    padding: 25px;
+}
+
+.pulse:hover {
+  animation: none;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0.7);
+  }
+  70% {
+      -webkit-box-shadow: 0 0 0 50px rgba(204,169,44, 0);
+  }
+  100% {
+      -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+  }
+}
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0.7);
+    box-shadow: 0 0 0 0 rgba(204,169,44, 0.7);
+  }
+  70% {
+      -moz-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+      box-shadow: 0 0 0 50px rgba(204,169,44, 0);
+  }
+  100% {
+      -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+      box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+  }
+}
+
+
+@media (min-width: 1000px) { 
+	.connect-links.upconnect .pulse, .connect-links:hover .pulse{
+		top: -25px;
+		transition: 1.5s;
+		animation: none;
+	}
+
+	.connect-links .pulse {
+		margin: 0px;
+		display: block;
+		width: 75px;
+		height: 75px;
+		border-radius: 50%;
+		background: #0084ffc2;
+		cursor: pointer;
+		box-shadow: 0 0 0 rgb(204 169 44 / 40%);
+		animation: pulse 2s infinite;
+		position: absolute;
+		top: -100px;
+		right: 10%;
+	}
+	.connect-links .pulse  img {
+		width: 40px;
+		height: 40px;
+	}
+	.connect-links span.pulse img {
+		padding: 18px;
+	}
+	.connect-links:hover .hoverbtn,
+	.connect-links:hover {
+		background: #3a3838f0;
+		bottom: 0px;
+		transition:1s;
+	}
+}
+.infocatalog-not-oficial {
+    position: fixed;
+    bottom: 0;
+    background: #ffffff;
+    width: 100%;
+    padding: 5px;
+    font-size: 12px;
+    z-index: 2;
+    display: block;
+    TEXT-ALIGN: CENTER;
+    BORDER: 0PX;
+    opacity: 1;
+    vertical-align: middle;
+	box-shadow: 0 0 2px;
+}
+
+span.infocatalog-not-oficial_text_icon {
+    width: 15px;
+    background: #2386e4;
+    border-radius: 15px;
+    height: 15px;
+    display: inline-block;
+    font-size: 13px;
+    color: white;
+    vertical-align: middle;
+    text-align: center;
+    padding: 2px;
+    margin-right: 5px;
+}
+
+
+/**/
+
+img.video-iframe-card {
+    width: 500px;
+    height: 290px;
+    float: left;
+    margin: 0 25px 25px 0px;
+}
+
+
+iframe.video-iframe-card {
+    width: 500px;
+    height: 290px;
+    float: left;
+    margin: 0 25px 25px 0px;
+}
+
+div.video-image-news {
+    position: relative;
+    width: 500px;
+    height: 300px;
+    display: inline-block;
+    margin: 20px;
+}
+
+a.first-video-link {
+    display: inline-block;
+    position: relative;
+    width: 500px;
+    height: 300px;
+    float: left;
+    margin-right: 10px;
+}
+
+.video_footer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.margin-top-karusel{
+	margin-top: 150px;
+}
+
+@media (max-width: 1000px) { 
+	a.first-video-link,
+	div.video-image-news {
+		width: 100%;
+		height: 100%;
+	}
+	
+	iframe.video-iframe-card {
+		WIDTH: 100%;
+		height: 320px;
+		text-align: center;
+		float: none;
+		margin: 0;
+	}
+	
+	img.video-iframe-card {
+		WIDTH: 100%;
+		height: 100%;
+		text-align: center;
+		float: none;
+		margin: 0;
+	}
+	
+	.margin-top-karusel{
+		margin-top: 50px;
+	}
+	
+	
+}
+
+
+/**/
+
+.play-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100px;height:70px;border-radius:18%;cursor:pointer;transition:background-color .3s ease;background-image:url(images/player.svg);background-size:contain;background-repeat:no-repeat;background-position:center;opacity:50%}.wall-basic:hover .play-icon{opacity:75%}.wall-basic:hover .first-image:hover .play-icon{opacity:85%}.first-image{position:relative}.faq-section{width:80%;margin:auto}div#faq-link{position:relative;top:-155px}.faq-section h2{text-align:center}.faq-item{padding:10px 0}.faq-item h3{cursor:pointer;margin:0;padding:10px;background:#f7f7f7;border:1px solid #ddd;border-radius:4px}.faq-item.active h3,.faq-item h3:hover{background:#6c6d6d;color:#fff}.faq-item.active div[itemprop="acceptedAnswer"]{margin:0;padding:20px;background:#fff;border:1px solid #ddd;border-top:none}.faq-item.active p{display:block}article a{color:#818181}
+
+
+
+
+article a {
+    color: #818181;
+}
+
+/**/
+.cookie-alert{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #e0e0e0;box-shadow:0 -2px 8px rgba(0,0,0,.1);padding:12px 20px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:13px;line-height:1.4;z-index:1;display:flex;align-items:center;justify-content:center;gap:15px;animation:slideUp .3s ease-out;width:100%;box-sizing:border-box}.cookie-alert.hidden{animation:slideDown .3s ease-in forwards}.cookie-alert-content{flex:1;margin:0;color:#333;text-align:center;max-width:800px}.cookie-alert-content a{color:#000;text-decoration:none}.cookie-alert-content a:hover{text-decoration:underline}.cookie-alert-button{background:#7e7e7e;color:#fff;border:none;padding:8px 16px;border-radius:4px;cursor:pointer;font-size:13px;font-weight:500;white-space:nowrap;transition:background-color .2s ease;margin-left:10px}.cookie-alert-button:hover{background:#0056b3}.cookie-alert-button:active{transform:translateY(1px)}@keyframes slideUp{from{transform:translateY(100%);opacity:0}to{transform:translateY(0);opacity:1}}@keyframes slideDown{from{transform:translateY(0);opacity:1}to{transform:translateY(100%);opacity:0}}@media(max-width:768px){.cookie-alert{padding:10px 15px;font-size:12px;gap:10px}.cookie-alert-content{font-size:12px;line-height:1.3}.cookie-alert-button{padding:7px 14px;font-size:12px;margin-left:8px}}@media(max-width:480px){.cookie-alert{padding:8px 12px;font-size:11px;gap:8px;flex-direction:column;text-align:center}.cookie-alert-content{font-size:11px;line-height:1.2;margin-bottom:5px}.cookie-alert-button{padding:6px 12px;font-size:11px;margin-left:0;width:auto;min-width:80px}}@media(max-width:320px){.cookie-alert{padding:6px 10px;font-size:10px;gap:6px}.cookie-alert-content{font-size:10px;line-height:1.1;margin-bottom:4px}.cookie-alert-button{padding:5px 10px;font-size:10px;min-width:70px}}
+
+
+
